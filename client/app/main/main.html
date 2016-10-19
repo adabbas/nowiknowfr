@@ -1,0 +1,29 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>'Allo, 'Allo!</h1>
+    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+  </div>
+</header>
+
+<div class="container">
+
+  <form name="subsciberForm" class="thing-form">
+    <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="email" name="email" class="form-control" placeholder="{{'Enter mail here.'|translate}}" ng-model="subscriptionCtrl.subscriber.email">
+    <p class="help-block" ng-show="subsciberForm.subscriber.email.$error.email && subscriptionCtrl.submitted">
+      Doesn't look like a valid email.
+    </p>
+    <p class="help-block" ng-show="subsciberForm.subscriberemail.$error.required && subscriptionCtrl.submitted">
+      What's your email address?
+    </p>
+    <p class="help-block" ng-show="subsciberForm.subscriberemail.$error.mongoose">
+      {{ $ctrl.errors.email }}
+    </p>
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="subscriptionCtrl.addSubscriber(subsciberForm)">Add New</button>
+      </span>
+    </p>
+  </form>
+</div>
